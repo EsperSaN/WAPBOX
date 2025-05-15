@@ -3,7 +3,7 @@ services :
   name: wapbox-backend
   plan: free
   env: docker
-  dockerfilePath: ./back/Dockerfile
+  dockerfilePath: Dockerfile # Changed from ./back/Dockerfile
   dockerContext: ./back
   envVars:
     - key: DEBUG
@@ -16,7 +16,7 @@ services :
   name: wapbox-frontend
   plan: free
   env: docker
-  dockerfilePath: ./front/Dockerfile
+  dockerfilePath: Dockerfile # Changed from ./front/Dockerfile
   dockerContext: ./front
   envVars:
     - key: NEXT_PUBLIC_API_URL
