@@ -1,0 +1,25 @@
+service :
+  - type: web
+  name: wapbox-backend
+  env: docker
+  dockerfilePath: ./back/Dockerfile
+  dockerContext: ./back
+  envVars:
+    - key: DEBUG
+      value: false
+    - key: DJANGO_SECRET_KEY
+      sync: false
+  healthCheckPath: /api/health/
+  
+  - type: web
+  name: wapbox-frontend
+  env: docker
+  dockerfilePath: ./front/Dockerfile
+  dockerContext: ./front
+  envVars:
+    - key: NEXT_PUBLIC_API_URL
+      fromService:
+        name: wapbox-backend
+        type: web
+        property: host
+      value: https://$NEXT_PUBLIC_API_URL
