@@ -1,6 +1,7 @@
 services :
 - type: web
   name: wapbox-backend
+  plan: free
   env: docker
   dockerfilePath: ./back/Dockerfile
   dockerContext: ./back
@@ -13,6 +14,7 @@ services :
 
 - type: web
   name: wapbox-frontend
+  plan: free
   env: docker
   dockerfilePath: ./front/Dockerfile
   dockerContext: ./front
