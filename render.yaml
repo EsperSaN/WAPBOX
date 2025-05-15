@@ -22,4 +22,3 @@ services :
         name: wapbox-backend
         type: web
         property: host
-      value: https://$NEXT_PUBLIC_API_URL
