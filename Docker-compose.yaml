@@ -7,21 +7,24 @@ services:
     ports:
       - "8000:8000"
 
-    # volumes: //uncomment this if you want to mount the local directory for development
+    # volumes: #//uncomment this if you want to mount the local directory for development
     #   - ./back:/app
+    
+    #   current directory / to mount in dockerfile "/app"
+
     networks:
       - wapbox-network
-    # environment: # Uncomment this if you want to set environment variables
-    #   - DEBUG=True
+    environment: 
+      - DEBUG=False
+      - DJANGO_SECRET_KEY=django-insecure-m7c-yxg$z4pbvgd=f@1o_)vv&1daw99ff(a%_x^eg&w!4ynv#d
 
   frontend:
     build:
       context: ./front
     ports:
       - "3000:3000"
-    # volumes: //uncomment this if you want to mount the local directory for development
+    # volumes: #//uncomment this if you want to mount the local directory for development
     #   - ./front:/app
-    #   - /app/node_modules
     depends_on:
       - backend
     networks:
