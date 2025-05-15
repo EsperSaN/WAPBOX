@@ -1,5 +1,5 @@
-service :
-  - type: web
+services :
+- type: web
   name: wapbox-backend
   env: docker
   dockerfilePath: ./back/Dockerfile
@@ -10,8 +10,8 @@ service :
     - key: DJANGO_SECRET_KEY
       sync: false
   healthCheckPath: /api/health/
-  
-  - type: web
+
+- type: web
   name: wapbox-frontend
   env: docker
   dockerfilePath: ./front/Dockerfile
