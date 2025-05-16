@@ -4,7 +4,7 @@ services :
     name : swapback
     plan : free
     region : singapore
-    repo : git@github.com:EsperSaN/WAPBOX.git
+    repo : https://github.com/EsperSaN/WAPBOX.git
     rootDir : back
     envVars :
       - name : PORT
