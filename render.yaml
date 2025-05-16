@@ -1,26 +1,13 @@
 services :
-- type: web
-  name: wapbox-backend
-  plan: free
-  env: docker
-  dockerfilePath: Dockerfile # Changed from ./back/Dockerfile
-  dockerContext: ./back
-  envVars:
-    - key: DEBUG
-      value: false
-    - key: DJANGO_SECRET_KEY
-      sync: false
-  healthCheckPath: /api/health/
-
-- type: web
-  name: wapbox-frontend
-  plan: free
-  env: docker
-  dockerfilePath: Dockerfile # Changed from ./front/Dockerfile
-  dockerContext: ./front
-  envVars:
-    - key: NEXT_PUBLIC_API_URL
-      fromService:
-        name: wapbox-backend
-        type: web
-        property: host
+  - type: web
+    runtime: docker
+    name : swapback
+    repo : git@github.com:EsperSaN/WAPBOX.git
+    rootDir : back
+    envVars :
+      - name : PORT
+        value : 8080
+      - name : DJANGO_SECRET_KEY
+        value : "django-insecure-m7c-yxg$z4pbvgd=f@1o_)vv&1daw99ff(a%_x^eg&w!4ynv#d"
+      - name : DEBUG
+        value : "False"
