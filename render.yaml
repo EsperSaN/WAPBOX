@@ -13,3 +13,4 @@ services :
         value : "django-insecure-m7c-yxg$z4pbvgd=f@1o_)vv&1daw99ff(a%_x^eg&w!4ynv#d"
       - name : DEBUG
         value : "False"
+      - fromGroup : env-group
