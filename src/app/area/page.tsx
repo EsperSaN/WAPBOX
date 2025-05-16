@@ -12,7 +12,7 @@ const AreaPage: React.FC = () => {
       try {
         const token = localStorage.getItem('jwt_access');
         console.log("Token:", token);
-        const res = await fetch("https://wapbox.onrender.com:8000/api/items/", {
+        const res = await fetch("https://wapbox.onrender.com/api/items/", {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -100,7 +100,7 @@ const AreaPage: React.FC = () => {
     if (!token || !text) return;
 
     try {
-      const res = await fetch(`https://wapbox.onrender.com:8000/api/items/${id}/comments/`, {
+      const res = await fetch(`https://wapbox.onrender.com/api/items/${id}/comments/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

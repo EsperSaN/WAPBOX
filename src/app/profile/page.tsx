@@ -174,7 +174,7 @@ const ProfilePage: React.FC = () => {
     if (!token || !text) return;
 
     try {
-      const res = await fetch(`https://wapbox.onrender.com:8000/api/items/${id}/comments/`, {
+      const res = await fetch(`https://wapbox.onrender.com/api/items/${id}/comments/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
