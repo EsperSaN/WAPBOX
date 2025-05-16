@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm install
-RUN npx next buildm --no-lint
+RUN npx next build --no-lint
 EXPOSE 3000
 EXPOSE 80
 
